@@ -1,0 +1,540 @@
+{
+  "pid": "TT#CRED#ID1000",
+  "order": {
+    "entity_identifier": "SUR",
+    "entity_identifier_type": "surgery",
+    "practitioner_identifier": "MB82354629556",
+    "practitioner_name": "Dr.Martha",
+    "authored_on": "20110602120415"
+  },
+  "results": [
+    {
+      "result_code": "ITSS-1250",
+      "result_text": "FBS(Fasting blood sugar) OGTT 75G (mg/dL) < 20 weeks",
+      "result_value": "86",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1251",
+      "result_text": "FBS(Fasting blood sugar) Abnormal/Normal",
+      "result_value": "abNormal",
+      "result_range": "false",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1252",
+      "result_text": "1HR",
+      "result_value": "81",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1253",
+      "result_text": "1HR Abnormal/normal",
+      "result_value": "a",
+      "result_range": "true",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1254",
+      "result_text": "2HR",
+      "result_value": "73",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1255",
+      "result_text": "2HR Abnormal/normal",
+      "result_value": "Normal",
+      "result_range": "false",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1256",
+      "result_text": "FBS(Fasting blood sugar) OGTT 75G (mg/dL) > 20 weeks",
+      "result_value": "95",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1257",
+      "result_text": "FBS(Fasting blood sugar) OGTT 75G (mg/dL) > 20 weeks",
+      "result_value": "Normal",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1258",
+      "result_text": "1HR OGTT 75G (mg/dL) > 20 weeks",
+      "result_value": "63",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1259",
+      "result_text": "1HR Ab/normal OGTT 75G (mg/dL) > 20 weeks",
+      "result_value": "Abn",
+      "result_range": "true/false",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1260",
+      "result_text": "2HR OGTT 75G (mg/dL) > 20 weeks",
+      "result_value": "85",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-1261",
+      "result_text": "2HR Ab/normal OGTT 75G (mg/dL) > 20 weeks",
+      "result_value": "normal",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0798",
+      "result_text": "Hb 1st trimester",
+      "result_value": "89",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0799",
+      "result_text": "Hb 1st trimester < 11.0g/dl",
+      "result_value": "t",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0846",
+      "result_text": "two donnors",
+      "result_value": "Ye",
+      "result_range": "y/n",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0876",
+      "result_text": "Hb 2nd trimester",
+      "result_value": "97",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0877",
+      "result_text": "Hb 2nd trimester <11.0 g/dl",
+      "result_value": "f",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0800",
+      "result_text": "Hb 3rd trimester",
+      "result_value": "121",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0801",
+      "result_text": "Hb 3rd trimester <11.0 g/dl",
+      "result_value": "f",
+      "result_range": "t/f",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0109",
+      "result_text": "Group B Step srceening (-ve)(+ve)(notdone)",
+      "result_value": "-",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0085",
+      "result_text": "Blood type",
+      "result_value": "a",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0086",
+      "result_text": "Rh",
+      "result_value": "+",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0087",
+      "result_text": "Immunization",
+      "result_value": "yessss",
+      "result_range": "y/n",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0410",
+      "result_text": "Anti d immunoglobulin (No)(yes)(notapplicable)",
+      "result_value": "n/a",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0656",
+      "result_text": "HIV Test Request (Yes)(no)(notapplicable)",
+      "result_value": "y",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0657",
+      "result_text": "HIV Test Result (Yes)(no)(notapplicable)(notdone)",
+      "result_value": "n/d",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0658",
+      "result_text": "ART In Preg (Yes)(no)(notapplicable)",
+      "result_value": "n",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0659",
+      "result_text": "HIV - Diag - Treatment: 2nd trimester HIV Test Request (Yes)(no)(notapplicable)",
+      "result_value": "nota",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0660",
+      "result_text": "Hiv test result (Yes)(no)(notapplicable)(notdone)",
+      "result_value": "nd",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0661",
+      "result_text": "2nd trimester ART In Preg (Yes)(no)(notapplicable)",
+      "result_value": "na",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0662",
+      "result_text": "3rd trimester HIV test request (Yes)(no)(notapplicable)",
+      "result_value": "notapplicable",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0663",
+      "result_text": "3rd trimester HIV test result (Yes)(no)(notapplicable)(notdone)",
+      "result_value": "no",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0664",
+      "result_text": "3rd trimester Art. in Preg.(Yes)(no)(notapplicable)",
+      "result_value": "no",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0849",
+      "result_text": "HIV - Diag - Treatment - Partner: 1st trimester HIV test request(Yes)(no)(notapplicable)",
+      "result_value": "no",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0850",
+      "result_text": "1st trimester HIV test result (Yes)(no)(notapplicable)(notdone)",
+      "result_value": "no",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0851",
+      "result_text": "1st trimester Art in Preg. (Yes)(no)(notapplicable)",
+      "result_value": "y",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0852",
+      "result_text": "2nd trimester HIV test request(Yes)(no)(notapplicable)",
+      "result_value": "n",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0853",
+      "result_text": "2nd trimester HIV test result (Yes)(no)(notapplicable)(notdone)",
+      "result_value": "notdone",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0854",
+      "result_text": "2nd trimester Art in Preg. (Yes)(no)(notapplicable)",
+      "result_value": "n/a",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0855",
+      "result_text": "3rd trimester HIV test request (Yes)(no)(notapplicable)",
+      "result_value": "n",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0856",
+      "result_text": "3rd trimester Art in Preg. (Yes)(no)(notapplicable)(notdone)",
+      "result_value": "y",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0857",
+      "result_text": "3rd trimester Art in Preg. (Yes)(no)(notapplicable)",
+      "result_value": "noooo",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0666",
+      "result_text": "SYPHILIS - Diagnosis and Treatment: VDRL Test 1st trim",
+      "result_value": "20",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0665",
+      "result_text": "VDRL (negative)(positive)(notdone)",
+      "result_value": "+",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0673",
+      "result_text": "2nd trim",
+      "result_value": "13",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0672",
+      "result_text": "VDRL (negative)(positive)(notdone)",
+      "result_value": "-",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0680",
+      "result_text": "3rd trim",
+      "result_value": "20",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0679",
+      "result_text": "3rd trim (negative)(positive)(notdone)",
+      "result_value": "p",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0668",
+      "result_text": "SYPHILIS - Diagnosis and Treatment: Treponema Test 1st trim",
+      "result_value": "20",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0667",
+      "result_text": "Treponema (negative)(positive)(notdone)(notapplicable)",
+      "result_value": "ne",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0675",
+      "result_text": "2nd trim",
+      "result_value": "10",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0674",
+      "result_text": "Treponema (negative)(positive)(notdone)(notapplicable)",
+      "result_value": "p",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0682",
+      "result_text": "3rd trim",
+      "result_value": "25",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0681",
+      "result_text": "Treponema (negative)(positive)(notdone)(notapplicable)",
+      "result_value": "na",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0670",
+      "result_text": "SYPHILIS - Diagnosis and Treatment: Treatment 1st trim",
+      "result_value": "10",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0669",
+      "result_text": "Treatment (no)(yes)(notdone)(notapplicable)",
+      "result_value": "n/d",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0677",
+      "result_text": "SYPHILIS - Diagnosis and Treatment: Treatment 2nd trim",
+      "result_value": "10",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0676",
+      "result_text": "Treatment (no)(yes)(notdone)(notapplicable)",
+      "result_value": "n/a",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0684",
+      "result_text": "SYPHILIS - Diagnosis and Treatment: Treatment 2nd trim",
+      "result_value": "13",
+      "result_range": "99",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0683",
+      "result_text": "Treatment (no)(yes)(notdone)(notapplicable)",
+      "result_value": "yesss",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0671",
+      "result_text": "SYPHILIS - Diagnosis and Treatment: Treatment Partner 1st Trim:Treatment (no)(yes)(notdone)(notapplicable)",
+      "result_value": "y",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0678",
+      "result_text": "2nd Trim:Treatment (no)(yes)(notdone)(notapplicable)",
+      "result_value": "notdone",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0685",
+      "result_text": "3rd Trim:Treatment (no)(yes)(notdone)(notapplicable)",
+      "result_value": "notapplicable",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0797",
+      "result_text": "Sickle Cell Screening (negative)(hbss)(hbas)",
+      "result_value": "hbasss",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0103",
+      "result_text": "BACTERIURIA Week<20: Normal/abnormal/notdone",
+      "result_value": "a",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0104",
+      "result_text": "BACTERIURIA Week>=20: Normal/abnormal/notdone",
+      "result_value": "nor",
+      "result_range": "",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    }
+  ]
+}

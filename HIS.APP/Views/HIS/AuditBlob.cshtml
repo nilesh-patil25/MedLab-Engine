@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AuditBlob>
+
+<div class="container p-3">
+    <h2 class="text-primary pt-3 pb-2 text-center">Patient Audit Blob</h2>
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Patient Id</th>
+                <th>Message GUID</th>
+                <th>Message Text or Raw Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="5%">
+                        @obj.ID
+                    </td>
+                    <td width="15%">
+                        @obj.PatientId
+                    </td>
+                    <td width="20%">
+                        @obj.MessageGUID
+                    </td>
+                    <td width="60%">
+                        @obj.MessageTextOrRawData
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

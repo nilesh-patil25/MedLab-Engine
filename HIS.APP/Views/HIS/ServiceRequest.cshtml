@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ServiceRequests>
+
+<div class="container p-3">
+    <h2 class="text-primary pt-3 pb-2 text-center">Patient Service Request</h2>
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Service Request Identifier</th>
+                <th>Service Request Identifier Type</th>
+                <th>Service Request Authored on</th>
+                <th>Requester Practitioner Identifier</th>
+                <th>Requester Practitioner Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="5%">
+                        @obj.ID
+                    </td>
+                    <td width="15%">
+                        @obj.ServiceRequestIdentifier
+                    </td>
+                    <td width="15%">
+                        @obj.ServiceRequestIdentifierType
+                    </td>
+                     <td width="15%">
+                        @obj.ServiceRequestAuthoredonDatefield
+                    </td>
+                    <td width="20%">
+                        @obj.RequesterPractitionerIdentifier
+                    </td>
+                    <td width="30%">
+                        @obj.RequesterPractitionerFirstName @obj.RequesterPractitionerLastName
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

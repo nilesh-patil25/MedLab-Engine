@@ -1,0 +1,60 @@
+﻿{
+  "pid": "TT#CRED#ID1000",
+  "order": {
+    "entity_identifier": "SUR",
+    "entity_identifier_type": "surgery",
+    "practitioner_identifier": "7965156",
+    "practitioner_name": "Jekyll",
+    "authored_on": "20110602120415"
+  },
+  "results": [
+    {
+      "result_code": "ITSS-0797",
+      "result_text": "",
+      "result_value": "zzz",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0667",
+      "result_text": "1",
+      "result_value": "+",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0672",
+      "result_text": "2",
+      "result_value": "n/d",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0679",
+      "result_text": "1",
+      "result_value": "+ve",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0674",
+      "result_text": "2",
+      "result_value": "n/d",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    },
+    {
+      "result_code": "ITSS-0681",
+      "result_text": "0",
+      "result_value": "-ve",
+      "result_range": "999",
+      "result_status": "T",
+      "result_datetime": "202060212402"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Observations>
+
+<div class="container p-3">
+    <h2 class="text-primary pt-3 pb-2 text-center">Patient Lab Result</h2>
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Observation Code</th>
+                <th>Observation Text</th>
+                <th>Observation Value</th>
+                <th>Observation Reference Range</th>
+                <th>Observation Status</th>
+                <th>Observation Effective Datetime</th>
+                <th>Observation Performer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="5%">
+                        @obj.ID
+                    </td>
+                    <td width="10%">
+                        @obj.ObservationCode
+                    </td>
+                    <td width="15%">
+                        @obj.ObservationText
+                    </td>
+                    <td width="15%">
+                        @obj.ObservationValue
+                    </td>
+                    <td width="15%">
+                        @obj.ObservationReferenceRange
+                    </td>
+                     <td width="10%">
+                        @obj.ObservationStatus
+                    </td>
+                     <td width="20%">
+                        @obj.ObservationEffectiveDatetime
+                    </td>
+                    <td width="10%">
+                        @obj.ObservationPerformer
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
