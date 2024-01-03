@@ -47,9 +47,18 @@ namespace HIS.APP.Controllers
         /// <returns></returns>
         public IActionResult LabResult()
         {
-            var labresult = (from labresults in _dbContext.ObservationLabResults select labresults).ToList();
-            return View(labresult);
+            try
+            {
+                var labresult = _dbContext.ObservationLabResults.ToList();
+                return View(labresult);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while retrieving lab results.");
+                return RedirectToAction("Error", "Home"); // Redirect to an error view
+            }
         }
+
         /// <summary>
         /// Index
         /// </summary>
