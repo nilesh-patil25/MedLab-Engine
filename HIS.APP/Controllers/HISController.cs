@@ -18,9 +18,21 @@ namespace HIS.APP.Controllers
         /// </summary>
         public IActionResult PatientDemographics()
         {
-            var patientDemographics= (from patient in _dbContext.Patientdemographics select patient).ToList();
-            return View(patientDemographics);
+            try
+            {
+                var patientDemographics = (from patient in _dbContext.Patientdemographics select patient).ToList();
+                return View(patientDemographics);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception details (you can replace Console.WriteLine with your preferred logging mechanism)
+                Console.WriteLine("An error occurred while retrieving patient demographics: " + ex.Message);
+
+                // Optionally, you can redirect to an error page or return a different view
+                return View("Error"); // Assuming you have an "Error" view
+            }
         }
+
 
         /// <summary>
         /// ServiceRequest
