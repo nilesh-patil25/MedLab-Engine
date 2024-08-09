@@ -35,21 +35,10 @@ namespace HIS.APP.Controllers
         }
         public IActionResult AuditTables()
         {
-            try
-            {
-                var audittable = _dbContext.Audittables.ToList();
-                return View(audittable);
-            }
-            catch (Exception ex)
-            {
-                // Log the exception or handle it accordingly
-                Console.WriteLine($"An error occurred: {ex.Message}");
-
-                // You may want to redirect to an error page or return a custom error view
-                // Example: return View("Error", new ErrorViewModel { ErrorMessage = "An error occurred while fetching audit tables." });
-                return RedirectToAction("Error", "Home");
-            }
+            var auditTable = _dbContext.Audittables.ToList();
+            return View(auditTable);
         }
+
 
         public IActionResult AuditBlob()
         {
