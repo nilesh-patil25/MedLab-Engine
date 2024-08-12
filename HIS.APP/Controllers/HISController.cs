@@ -42,20 +42,10 @@ namespace HIS.APP.Controllers
 
         public IActionResult AuditBlob()
         {
-            try
-            {
-                var auditBlob = _dbContext.Auditblobs.ToList();
-                return View(auditBlob);
-            }
-            catch (Exception ex)
-            {
-                // Log or handle the exception as needed
-                Console.WriteLine($"An error occurred: {ex.Message}");
-
-                // You might want to redirect to an error view or display an error message
-                return RedirectToAction("Error", "Home");
-            }
+            var auditBlob = _dbContext.Auditblobs.ToList();
+            return View(auditBlob);
         }
+
 
         /// <summary>
         /// LabResult
