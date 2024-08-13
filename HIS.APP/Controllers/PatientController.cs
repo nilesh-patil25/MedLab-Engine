@@ -46,41 +46,42 @@ namespace HIS.APP.Controllers
         [HttpGet]
         public async Task<ActionResult> GetPatientDemographics()
         {
-            try
-            {
-                var patientIdList = PatientHelper.GetSIPpatients(CouchDBBaseURL); 
-                List<PatientDemographics> patientDemographicsDetailsList = new();
-                foreach (var patient in patientIdList.Results)
-                {
-                    if (!patient.Id.Contains('/'))
-                    {
-                        PatientHelper.SetPatientDemographics(SIPBaseURL, patient.Id, out RestResponse response, out PatientDemographics patientDemographicsDetails);
-                        PatientHelper.SetPatientProperties(response, patientDemographicsDetails, patient.Id, SIPBaseURL);
-                        patientDemographicsDetailsList.Add(patientDemographicsDetails);
+            var patientIdList = PatientHelper.GetSIPpatients(CouchDBBaseURL);
+            List<PatientDemographics> patientDemographicsDetailsList = new();
 
-                        if (patientDemographicsDetails.PatientFirstName != null || patientDemographicsDetails.PatientLastName != null && patientDemographicsDetails.RecordNumber != null)
-                        {
-                            _dbContext.Patientdemographics.Add(patientDemographicsDetails);
-                            AuditTable auditTable = new();
-                            AuditBlob auditblob = new();
-                            PatientHelper.SetAuditTable(patientDemographicsDetails, auditTable);
-                            PatientHelper.SetAuditblobTable(patientDemographicsDetails, auditblob);
-                            PatientHelper.PostDataToWebHook(WebHook, response.Content);
-                            auditTable.IsWebHookSend = true;
-                            _dbContext.Audittables.Add(auditTable);
-                            _dbContext.Auditblobs.Add(auditblob);
-                        }
-                        _dbContext.SaveChanges();
-                    }
-                }
-                patientIdList = PatientHelper.GetSIPpatients(CouchDBBaseURL);
-                return Ok(patientDemographicsDetailsList);
-            }
-            catch (Exception e)
+            foreach (var patient in patientIdList.Results)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
+                if (!patient.Id.Contains('/'))
+                {
+                    PatientHelper.SetPatientDemographics(SIPBaseURL, patient.Id, out RestResponse response, out PatientDemographics patientDemographicsDetails);
+                    PatientHelper.SetPatientProperties(response, patientDemographicsDetails, patient.Id, SIPBaseURL);
+                    patientDemographicsDetailsList.Add(patientDemographicsDetails);
+
+                    if (patientDemographicsDetails.PatientFirstName != null ||
+                        patientDemographicsDetails.PatientLastName != null &&
+                        patientDemographicsDetails.RecordNumber != null)
+                    {
+                        _dbContext.Patientdemographics.Add(patientDemographicsDetails);
+                        AuditTable auditTable = new();
+                        AuditBlob auditblob = new();
+
+                        PatientHelper.SetAuditTable(patientDemographicsDetails, auditTable);
+                        PatientHelper.SetAuditblobTable(patientDemographicsDetails, auditblob);
+                        PatientHelper.PostDataToWebHook(WebHook, response.Content);
+
+                        auditTable.IsWebHookSend = true;
+                        _dbContext.Audittables.Add(auditTable);
+                        _dbContext.Auditblobs.Add(auditblob);
+                    }
+                    _dbContext.SaveChanges();
+                }
             }
+
+            // Refresh patient ID list after processing
+            patientIdList = PatientHelper.GetSIPpatients(CouchDBBaseURL);
+            return Ok(patientDemographicsDetailsList);
         }
+
         /// <summary>
         /// Get PatientDemographics By Date
         /// </summary>
