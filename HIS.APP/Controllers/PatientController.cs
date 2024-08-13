@@ -91,27 +91,28 @@ namespace HIS.APP.Controllers
         [HttpGet]
         public async Task<ActionResult> GetPatientDemographicsByDate(string stringDate)
         {
-            try
+            var date = DateTime.ParseExact(stringDate.Replace('.', ':'), "ddMMyyyy HH:mm", CultureInfo.InvariantCulture);
+            List<PatientDemographics> patientDemographicsDetailsList = new();
+
+            var patientList = await _dbContext.Patientdemographics
+                                               .Where(x => x.ITSSID != null)
+                                               .ToListAsync();
+
+            foreach (var patient in patientList)
             {
-                var date = DateTime.ParseExact(stringDate.Replace('.', ':'), "ddMMyyyy HH:mm", CultureInfo.InvariantCulture);
-                List<PatientDemographics> patientDemographicsDetailsList = new();
-                var patientList = await _dbContext.Patientdemographics.Where(x => x.ITSSID != null).ToListAsync();
-                foreach (var patient in patientList)
+                var auditRecord = await _dbContext.Audittables
+                                                  .FirstOrDefaultAsync(x => x.PatientIdentifier == patient.ITSSID);
+
+                if (auditRecord != null &&
+                    DateTime.ParseExact(auditRecord.ReceivedDateTime.Replace('.', ':'), "ddMMyyyy HH:mm", CultureInfo.InvariantCulture) >= date)
                 {
-                    var auditRecord = await _dbContext.Audittables.FirstOrDefaultAsync(x => x.PatientIdentifier == patient.ITSSID);
-                    if (auditRecord is not null &&
-                        DateTime.ParseExact(auditRecord.ReceivedDateTime.Replace('.', ':'), "ddMMyyyy HH:mm", CultureInfo.InvariantCulture) >= date)
-                    {
-                        patientDemographicsDetailsList.Add(patient);
-                    }
+                    patientDemographicsDetailsList.Add(patient);
                 }
-                return Ok(patientDemographicsDetailsList);
             }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+
+            return Ok(patientDemographicsDetailsList);
         }
+
 
         /// <summary>
         /// Get Service Request
