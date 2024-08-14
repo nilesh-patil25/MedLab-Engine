@@ -122,20 +122,16 @@ namespace HIS.APP.Controllers
         [HttpGet]
         public async Task<ActionResult> GetServiceRequest()
         {
-            try
-            {
-                var ServiceRsponse = PatientHelper.GetResult();
-                ServiceRequests serviceRequest = JsonConvert.DeserializeObject<ServiceRequests>(ServiceRsponse);
-                PatientHelper.SetServiceRequest(ServiceRsponse, serviceRequest);
-                _dbContext.ServiceRequests.Add(serviceRequest);
-                _dbContext.SaveChanges();
-                return Ok(serviceRequest);
-            }
-            catch(Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var serviceResponse = PatientHelper.GetResult();
+            var serviceRequest = JsonConvert.DeserializeObject<ServiceRequests>(serviceResponse);
+
+            PatientHelper.SetServiceRequest(serviceResponse, serviceRequest);
+            _dbContext.ServiceRequests.Add(serviceRequest);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(serviceRequest);
         }
+
         /// <summary>
         /// LabResults Get Request
         /// </summary>
