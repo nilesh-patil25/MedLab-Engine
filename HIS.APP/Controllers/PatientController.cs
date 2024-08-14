@@ -140,20 +140,16 @@ namespace HIS.APP.Controllers
         [HttpGet]
         public async Task<ActionResult> GetLabResults()
         {
-            try
-            {
-                var LabRsponse = PatientHelper.GetResult();
-                Observations observations = JsonConvert.DeserializeObject<Observations>(LabRsponse);
-                PatientHelper.SetObservationsfields(LabRsponse, observations);
-                _dbContext.ObservationLabResults.Add(observations);
-                _dbContext.SaveChanges();
-                return Ok(observations);
-            }
-            catch(Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            var labResponse = PatientHelper.GetResult();
+            var observations = JsonConvert.DeserializeObject<Observations>(labResponse);
+
+            PatientHelper.SetObservationsfields(labResponse, observations);
+            _dbContext.ObservationLabResults.Add(observations);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(observations);
         }
+
         /// <summary>
         /// PostPatientDetails Read the data from the ServiceRequest LabResults.json file and post it to SIP Plus for the most recent pregnancy.
         /// </summary>
@@ -162,50 +158,48 @@ namespace HIS.APP.Controllers
         [HttpPost]
         public async Task<ActionResult> PostPatientDetails()
         {
-            try
+            var labResponse = PatientHelper.GetResult();
+            var results = JsonConvert.DeserializeObject<ServiceRequest_LabResults>(labResponse);
+
+            var patientInfo = new DemographicsInformation();
+            var propertyInfos = typeof(DemographicsInformation).GetProperties();
+
+            PatientHelper.SetPatientClass(SIPBaseURL, results.Pid, out var response, out var patientClass);
+
+            var patientResultList = results.Results
+                .Select(result => Converter.AssignValue(patientInfo, result.ResultCode, result.ResultValue))
+                .Where(tempResultString => !string.IsNullOrWhiteSpace(tempResultString))
+                .ToList();
+
+            var pregnancyCode = PatientHelper.GetLatestPregnancy(patientClass.Pregnancies);
+            var url = $"{SIPBaseURL}/record/{results.Pid.Replace('#', '/')}";
+            var sipBody = $"{{\"pregnancies\":{{ \"{pregnancyCode}\" : {{ {string.Join(',', patientResultList)} }} }} }}";
+
+            PatientHelper.SetPatientDemographics(SIPBaseURL, results.Pid, out response, out var patientDemographicsDetails);
+
+            _dbContext.Patientdemographics.Add(patientDemographicsDetails);
+
+            var auditTable = new AuditTable();
+            PatientHelper.SetAuditTable(patientDemographicsDetails, auditTable);
+            _dbContext.Audittables.Add(auditTable);
+
+            await _dbContext.SaveChangesAsync();
+
+            var client = new RestClient(url);
+            var postRequest = new RestRequest
             {
-                var LabResponse = PatientHelper.GetResult();
-                var results = JsonConvert.DeserializeObject<ServiceRequest_LabResults>(LabResponse);
+                Method = Method.Post
+            };
 
-                DemographicsInformation patientInfo = new();
-                PropertyInfo[] propertyInfos = typeof(DemographicsInformation).GetProperties();
-                PatientHelper.SetPatientClass(SIPBaseURL, results.Pid, out RestResponse response, out PatientClass patientClass);
-                var patientResultList = new List<string>();
-                foreach (var result in results.Results)
-                {
-                    var tempResultString = Converter.AssignValue(patientInfo, result.ResultCode, result.ResultValue);
-                    if (!string.IsNullOrWhiteSpace(tempResultString))
-                    {
-                        patientResultList.Add(tempResultString);
-                    }
-                }
-                string pregnancycode = PatientHelper.GetLatestPregnancy(patientClass.Pregnancies);
-                var url = string.Format("{0}/record/{1}", SIPBaseURL, results.Pid.Replace('#', '/'));
-                string sipBody = string.Format("{{\"pregnancies\":{{ \"{0}\" : {{ {1} }} }} }}", pregnancycode, string.Join(',', patientResultList));
+            postRequest.AddHeader("Content-Type", "application/json");
+            postRequest.AddHeader("Authorization", "Basic YWRtaW46YWRtaW4=");
+            postRequest.AddParameter("application/json", sipBody, ParameterType.RequestBody);
 
-                PatientHelper.SetPatientDemographics(SIPBaseURL, results.Pid, out response, out PatientDemographics patientDemographicsDetails);
-                _dbContext.Patientdemographics.Add(patientDemographicsDetails);
-                AuditTable auditTable = new();
-                PatientHelper.SetAuditTable(patientDemographicsDetails, auditTable);
-                _dbContext.Audittables.Add(auditTable);
-                _dbContext.SaveChanges();
+            response = client.Execute(postRequest);
 
-                var client = new RestClient(url);
-                var postRequest = new RestRequest();
-                postRequest.AddHeader("Content-Type", "application/json");
-                postRequest.AddHeader("Authorization", "Basic YWRtaW46YWRtaW4=");
-                postRequest.Method = Method.Post;
-
-                postRequest.AddParameter("application/json", sipBody, ParameterType.RequestBody);
-                response = client.Execute(postRequest);
-
-                return Ok(response);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
-            }
+            return Ok(response);
         }
+
 
 
 
