@@ -10,15 +10,9 @@ namespace HIS.APP.Controllers
         [HttpPost]
         public async Task<ActionResult> PostWebHook()
         {
-            try
-            {
-                var body = Request.Body;
-                return Ok(body);
-            }
-            catch(Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var body = Request.Body;
+            return Ok(body);
         }
     }
+
 }
